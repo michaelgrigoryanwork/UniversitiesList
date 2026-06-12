@@ -28,8 +28,7 @@ struct UniversitiesListInteractorTests {
     func fetchUniversitiesSuccess() async {
         // Given
         let university = UniversitiesListInteractorTests.mockUniversity
-        let expectedUniversities = [university]
-        mockRepository.resultToReturn = (items: expectedUniversities, hasMore: false)
+        mockRepository.resultToReturn = (items: [university], hasMore: false)
         
         // When
         await sut.fetchUniversities(for: .unitedKingdom, name: nil, page: 0)
@@ -43,8 +42,7 @@ struct UniversitiesListInteractorTests {
     @Test
     func fetchUniversitiesFailure() async {
         // Given
-        enum TestError: Error { case networkDown }
-        mockRepository.errorToThrow = TestError.networkDown
+        mockRepository.errorToThrow = MockError.networkDown
         
         // When
         await sut.fetchUniversities(for: .unitedKingdom, name: nil, page: 0)
@@ -56,6 +54,10 @@ struct UniversitiesListInteractorTests {
 }
 
 private extension UniversitiesListInteractorTests {
+    enum MockError: Error {
+        case networkDown
+    }
+
     static var mockUniversity: University {
         University.init(
             id: "1",

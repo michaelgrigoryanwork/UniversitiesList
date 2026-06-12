@@ -44,14 +44,14 @@ struct UniversitiesListPresenterTests {
     @Test
     func testDidSelectUniversity() {
         // Given
-        let expectedUniversity = UniversitiesListPresenterTests.mockUniversity
+        let university = UniversitiesListPresenterTests.mockUniversity
         
         // When
-        sut.didSelect(university: expectedUniversity)
+        sut.didSelect(university: university)
         
         // Verify
         #expect(mockRouter.capturedRoutedUniversity != nil)
-        #expect(mockRouter.capturedRoutedUniversity?.name == expectedUniversity.name)
+        #expect(mockRouter.capturedRoutedUniversity?.name == university.name)
     }
 }
 

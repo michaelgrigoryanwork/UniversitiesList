@@ -31,14 +31,14 @@ struct UniversitiesListRouterTests {
     
     func testNavigateToDetails() {
         // Given
-        let dummyUniversity = UniversitiesListRouterTests.mockUniversity
+        let university = UniversitiesListRouterTests.mockUniversity
         
         // When
-        sut.navigateToDetails(for: dummyUniversity)
+        sut.navigateToDetails(for: university)
         
         // Verify
         #expect(mockFactory.capturedUniversity != nil)
-        #expect(mockFactory.capturedUniversity?.name == dummyUniversity.name)
+        #expect(mockFactory.capturedUniversity?.name == university.name)
         #expect(mockNavigationController.didCallPushViewController == true)
         let pushedVC = mockNavigationController.capturedPushedViewController
         #expect(pushedVC === mockFactory.stubbedDetailsViewController)

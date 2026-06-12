@@ -15,12 +15,12 @@ final class MockUniversitiesListFactory: UniversitiesListFactoryProtocol {
     
     let stubbedDetailsViewController = UIViewController()
     
-    func makeUniversitiesList() -> UIViewController {
+    func makeUniversityDetails(for university: University) -> UIViewController {
+        self.capturedUniversity = university
         return stubbedDetailsViewController
     }
     
-    func makeUniversityDetails(for university: University) -> UIViewController {
-        self.capturedUniversity = university
+    func makeUniversitiesList() -> UIViewController {
         return stubbedDetailsViewController
     }
 }
