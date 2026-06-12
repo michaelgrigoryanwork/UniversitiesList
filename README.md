@@ -9,6 +9,7 @@
 ![Architecture](https://img.shields.io/badge/Architecture-VIPER-brightgreen.svg)
 ![SPM](https://img.shields.io/badge/Dependency-SPM-orange.svg)
 ![Concurrency](https://img.shields.io/badge/Swift_6-Strict_Concurrency-purple.svg)
+![Testing](https://img.shields.io/badge/Testing-Swift_Testing-success.svg)
 
 </div>
 
